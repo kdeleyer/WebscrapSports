@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Sports</title>
+    <link rel="shortcut icon" href="{% static 'favicon-16x16.png' %}">
+</head>
+<body>
+    <h1>Live sports games on {{ today }}:</h1>
+    <ul>
+        {% for game in games %}
+            <li>
+                <strong>{{ game.title }}</strong> at {{ game.time }}<br>
+                Teams: {{ game.team1 }} vs {{ game.team2 }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
